@@ -207,3 +207,4 @@ Run time of job "agent (trigger: date[2018-09-13 21:51:33 CST], next run at: 201
 127.0.0.1 - - [18/Sep/2018 10:01:27] "GET /schedule/jobs/groups/ HTTP/1.1" 200 -
 127.0.0.1 - - [18/Sep/2018 10:01:48] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
 127.0.0.1 - - [18/Sep/2018 10:15:33] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+172.16.6.253 - - [18/Sep/2018 10:50:13] "GET /assets/hosts/ HTTP/1.1" 401 -
