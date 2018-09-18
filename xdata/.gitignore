@@ -2,10 +2,11 @@
 *.pyc
 /.git/
 .DS_Store
-/xxdata_web/node_modules/
+/xdata_web/node_modules/
 /xdata_web/dist/
 /xdata_web/npm-debug.log
 /xdata_api/config.py
 /xdata_api/test.db
-/venv/
-xxdata/xdata_web/nohup.out
+/xdata_api/venv/
+/xdata_web/nohup.out
+/xdata_api/nohup.out
