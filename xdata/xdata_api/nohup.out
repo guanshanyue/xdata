@@ -1,0 +1,209 @@
+ * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+ * Restarting with stat
+Run time of job "agent (trigger: date[2018-09-13 21:51:33 CST], next run at: 2018-09-13 21:51:33 CST)" was missed by 4 days, 11:34:58.075828
+ * Debugger is active!
+ * Debugger PIN: 179-126-940
+Run time of job "agent (trigger: date[2018-09-13 21:51:33 CST], next run at: 2018-09-13 21:51:33 CST)" was missed by 4 days, 11:34:59.519237
+172.16.6.253 - - [18/Sep/2018 09:27:53] "GET /assets/hosts/ HTTP/1.1" 401 -
+172.16.6.253 - - [18/Sep/2018 09:28:55] "GET /assets/hosts/ HTTP/1.1" 401 -
+127.0.0.1 - - [18/Sep/2018 09:30:47] "GET /home/ HTTP/1.1" 401 -
+127.0.0.1 - - [18/Sep/2018 09:31:02] "POST /account/users/login/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:31:12] "GET /account/users/?page=1&name= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:31:15] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:31:32] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:31:37] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:31:43] "GET /account/users/?page=1&name= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:31:51] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:31:54] "GET /deploy/apps/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:31:54] "GET /deploy/apps/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:31:56] "GET /configuration/relationship/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:32:00] "GET /schedule/jobs/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:32:00] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:32:03] "GET /home/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:32:10] "GET /account/users/?page=1&name= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:32:10] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:32:12] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:32:14] "GET /account/users/?page=1&name= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:32:14] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:32:24] "GET /account/users/logout/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:32:28] "POST /account/users/login/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:32:33] "GET /home/ HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+'NoneType' object has no attribute 'get'
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/assets/host.py", line 28, in get
+    if form.host_query.get('name_field'):
+AttributeError: 'NoneType' object has no attribute 'get'
+172.16.6.253 - - [18/Sep/2018 09:32:52] "GET /assets/hosts/ HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/assets/host.py', reloading
+host_ng {'page': 1, 'pagesize': 10, 'host_query': None}
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 179-126-940
+Run time of job "agent (trigger: date[2018-09-13 21:51:33 CST], next run at: 2018-09-13 21:51:33 CST)" was missed by 4 days, 11:43:03.486273
+172.16.6.253 - - [18/Sep/2018 09:34:42] "GET /assets/hosts/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:35:17] "GET /account/users/?page=1&name= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:35:17] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:35:18] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:35:23] "GET /home/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:35:27] "GET /account/users/logout/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:35:31] "POST /account/users/login/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:35:48] "GET /assets/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:35:48] "GET /assets/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:35:51] "GET /assets/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:35:51] "GET /assets/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:03] "POST /assets/hosts_exec/exec_command HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:06] "GET /common/queue/state/7b7aab8a5b7c48e08adc6c13c52772af HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:06] "GET /common/queue/state/7b7aab8a5b7c48e08adc6c13c52772af HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:06] "GET /common/queue/state/7b7aab8a5b7c48e08adc6c13c52772af HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:07] "DELETE /assets/hosts_exec/exec_command/7b7aab8a5b7c48e08adc6c13c52772af HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:14] "GET /assets/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:14] "GET /assets/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:25] "POST /assets/hosts_exec/exec_command HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:26] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:26] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:26] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:26] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:26] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:26] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:26] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:26] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:26] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:26] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:26] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:27] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:28] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:29] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:29] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:29] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:29] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:29] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:29] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:29] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:29] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:29] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:29] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:29] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:29] "GET /common/queue/state/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:31] "DELETE /assets/hosts_exec/exec_command/524f9f2bcf184548affb7ec3aeac9621 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:39] "GET /assets/hosts_exec/tpl/?page=1&tpl_query=%7B%22name_field%22:%22%22,%22type_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:39] "GET /assets/hosts_exec/tpl_type HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:42] "GET /deploy/apps/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:42] "GET /deploy/apps/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:44] "GET /deploy/fields/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:45] "GET /deploy/menus/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:45] "GET /deploy/images/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:48] "GET /configuration/environments/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:49] "GET /configuration/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:49] "GET /configuration/services/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:50] "GET /deploy/apps/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:50] "GET /deploy/apps/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:36:51] "GET /configuration/relationship/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:45:32] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:45:32] "GET /schedule/jobs/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:45:43] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:45:43] "POST /schedule/jobs/2/switch HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:45:44] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:45:46] "GET /schedule/histories/2 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:45:51] "GET /schedule/histories/2 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:45:53] "DELETE /schedule/jobs/2/switch HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:45:53] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:45:58] "GET /assets/hosts/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:46:03] "PUT /schedule/jobs/2 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:46:03] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:46:03] "GET /schedule/jobs/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:46:05] "POST /schedule/jobs/2/switch HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:46:05] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:46:07] "GET /schedule/histories/2 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:46:15] "DELETE /schedule/jobs/2/switch HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:46:15] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:54:35] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:54:35] "GET /schedule/jobs/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:54:51] "GET /home/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:55:49] "GET /account/users/logout/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:55:52] "POST /account/users/login/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:55:53] "GET /home/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:55:56] "GET /account/users/?page=1&name= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:55:56] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:55:57] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 09:55:59] "GET /account/roles/ HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/libs/tools.py', reloading
+host_ng {'page': 1, 'pagesize': 10, 'host_query': {'name_field': '', 'zone_field': ''}}
+host_ng {'page': 1, 'pagesize': 10, 'host_query': {'name_field': '', 'zone_field': ''}}
+host_ng {'page': 1, 'pagesize': 10, 'host_query': {'name_field': '', 'zone_field': ''}}
+host_ng {'page': 1, 'pagesize': 10, 'host_query': {'name_field': '', 'zone_field': ''}}
+host_ng {'page': 1, 'pagesize': 10, 'host_query': {'name_field': '', 'zone_field': ''}}
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 179-126-940
+Run time of job "agent (trigger: date[2018-09-13 21:51:33 CST], next run at: 2018-09-13 21:51:33 CST)" was missed by 4 days, 12:08:27.532204
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/libs/tools.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 179-126-940
+Run time of job "agent (trigger: date[2018-09-13 21:51:33 CST], next run at: 2018-09-13 21:51:33 CST)" was missed by 4 days, 12:09:02.564415
+127.0.0.1 - - [18/Sep/2018 10:00:43] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:00:45] "GET /account/users/?page=1&name= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:00:46] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:00:46] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:00:56] "GET /assets/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:00:56] "GET /assets/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:02] "GET /assets/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:02] "GET /assets/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:07] "GET /assets/hosts_exec/tpl/?page=1&tpl_query=%7B%22name_field%22:%22%22,%22type_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:07] "GET /assets/hosts_exec/tpl_type HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:11] "POST /assets/hosts_exec/exec_command HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:11] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:12] "GET /common/queue/state/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:14] "DELETE /assets/hosts_exec/exec_command/4651614a9e9c473bbaf860678c9cb85a HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:17] "GET /assets/hosts_exec/tpl/?page=1&tpl_query=%7B%22name_field%22:%22%22,%22type_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:17] "GET /assets/hosts_exec/tpl_type HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:27] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:27] "GET /schedule/jobs/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:01:48] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2018 10:15:33] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
