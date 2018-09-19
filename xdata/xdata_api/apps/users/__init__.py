@@ -1,5 +1,5 @@
-from apps.assets import host
-from apps.assets import host_exec
+from apps.users import host
+from apps.users import host_exec
 
 
 def register_blueprint(app):

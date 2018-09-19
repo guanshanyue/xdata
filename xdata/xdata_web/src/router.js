@@ -12,6 +12,7 @@ import publish_routes from './components/publish/routes'
 import configuration_routes from './components/configuration/routes'
 import assets_routes from './components/assets/routes'
 import schedule_routes from './components/schedule/routes'
+import users_routes from './components/users/routes'
 
 const routes = [
     {
@@ -43,6 +44,10 @@ const routes = [
     {
         path: 'schedule',
         routes: schedule_routes
+    },
+    {
+        path: 'users',
+        routes: users_routes
     },
     {
         path: '*',

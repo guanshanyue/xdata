@@ -113,3 +113,10 @@ INSERT INTO account_permissions (id, name, `desc`) VALUES (1203, 'publish_field_
 INSERT INTO account_permissions (id, name, `desc`) VALUES (1204, 'publish_field_del', '自定义字段 - 删除');
 INSERT INTO account_permissions (id, name, `desc`) VALUES (1205, 'publish_field_rel_view', '关联配置 - 查看');
 INSERT INTO account_permissions (id, name, `desc`) VALUES (1206, 'publish_field_rel_edit', '关联配置 - 编辑');
+
+-- 数据库管理 -> 数据库列表
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1301, 'users_host_view', '获取数据库列表');
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1302, 'users_host_add', '添加数据库');
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1303, 'users_host_edit', '编辑数据库');
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1304, 'users_host_del', '删除数据');
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1305, 'users_host_valid', '验证数据库');

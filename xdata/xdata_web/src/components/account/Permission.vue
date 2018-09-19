@@ -187,6 +187,18 @@
                 <tag-td :item="codes['job_task_log']"></tag-td>
                 <td></td>
             </tr>
+            <tr>
+                <td rowspan="2">数据库管理</td>
+                <td rowspan="2">数据库列表</td>
+                <tag-td :item="codes['users_host_view']"></tag-td>
+                <tag-td :item="codes['users_host_add']"></tag-td>
+                <tag-td :item="codes['users_host_edit']"></tag-td>
+            </tr>
+             <tr>
+                <tag-td :item="codes['users_host_del']"></tag-td>
+                <tag-td :item="codes['users_host_valid']"></tag-td>
+                <td></td>
+            </tr>
         </table>
         <el-table v-else v-loading="loading"></el-table>
         <div slot="footer">

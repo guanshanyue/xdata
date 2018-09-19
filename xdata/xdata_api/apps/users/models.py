@@ -3,45 +3,33 @@ from libs.model import ModelMixin
 import datetime
 
 
-class Host(db.Model, ModelMixin):
-    __tablename__ = 'assets_hosts'
+class User(db.Model, ModelMixin):
+    __tablename__ = 'user_hosts'
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
     desc = db.Column(db.String(255))
     type = db.Column(db.String(50))
     zone = db.Column(db.String(50))
-    docker_uri = db.Column(db.String(255))
-    ssh_ip = db.Column(db.String(32))
-    ssh_port = db.Column(db.Integer)
+    db_host = db.Column(db.String(255))
+    db_user = db.Column(db.String(128))
+    db_password = db.Column(db.String(128))
+    db_port = db.Column(db.Integer)
 
     def __repr__(self):
-        return '<Host %r>' % self.name
+        return '<User %r>' % self.name
 
-
-class HostExtend(db.Model, ModelMixin):
-    __tablename__ = 'assets_hosts_extend'
-
-    id = db.Column(db.Integer, primary_key=True)
-    host_id = db.Column(db.Integer, db.ForeignKey('assets_hosts.id'))
-    operate_system = db.Column(db.String(64))
-    memory = db.Column(db.SmallInteger)
-    cpu = db.Column(db.SmallInteger)
-    disk = db.Column(db.SmallInteger)
-    outer_ip = db.Column(db.String(128))
-    inner_ip = db.Column(db.String(128))
-
-    hosts = db.relationship(Host, backref=db.backref('host'))
-
-
-class HostExecTemplate(db.Model, ModelMixin):
-    __tablename__ = 'assets_hosts_exec_template'
+class UserInfo(db.Model, ModelMixin):
+    __tablename__ = 'user_hosts_info'
 
     id = db.Column(db.Integer, primary_key=True)
-    tpl_name = db.Column(db.String(50))
-    tpl_desc = db.Column(db.String(255))
-    tpl_type = db.Column(db.String(50))
-    tpl_content = db.Column(db.Text())
+    user_id =  db.Column(db.Integer, db.ForeignKey('user_hosts.id'))
+    name = db.Column(db.String(50))
+    desc = db.Column(db.String(255))
+    db_user = db.Column(db.String(128))
+    db_password = db.Column(db.String(128))
+    db_priv = db.Column(db.String(255))
+
 
     def __repr__(self):
-        return '<HostExecTemplate %r>' % self.tpl_name
+        return '<UserInfo %r>' % self.name

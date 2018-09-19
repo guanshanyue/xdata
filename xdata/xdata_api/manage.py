@@ -47,6 +47,7 @@ def init_db():
     import apps.assets.models
     import apps.schedule.models
     import apps.setting.models
+    import apps.users.models
 
     user_input = input('是否要初始化数据库，该操作会清空所有数据[y|n]？')
     if user_input.strip() == 'y':

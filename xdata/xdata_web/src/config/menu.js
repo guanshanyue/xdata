@@ -44,6 +44,11 @@ let menu = {
                 {key: 'alarm_contact', desc: '报警联系人'},
             ]
         },
+        {
+            key: '8', desc: '数据库管理', icon: 'fa fa-server', permission: 'users_host_view', subs: [
+                {key: '/users/user', permission: 'assets_host_view', desc: '数据库列表'}
+            ]
+        },
     ]
 };
 
