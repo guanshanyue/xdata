@@ -1026,3 +1026,828 @@ NameError: name 'AppHostRel' is not defined
 127.0.0.1 - - [19/Sep/2018 15:21:57] "GET /users/hosts/4/extend/ HTTP/1.1" 404 -
 127.0.0.1 - - [19/Sep/2018 15:22:06] "DELETE /users/hosts/4 HTTP/1.1" 200 -
 127.0.0.1 - - [19/Sep/2018 15:22:11] "DELETE /users/hosts/4 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:33:16] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 401 -
+127.0.0.1 - - [19/Sep/2018 15:33:17] "GET /users/hosts/zone/ HTTP/1.1" 401 -
+127.0.0.1 - - [19/Sep/2018 15:33:17] "GET /users/hosts/type/ HTTP/1.1" 401 -
+127.0.0.1 - - [19/Sep/2018 15:33:28] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:33:32] "DELETE /users/hosts/4 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:33:36] "DELETE /users/hosts/5 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:33:36] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:34:21] "POST /users/hosts/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:34:21] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:34:21] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:34:21] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:34:22] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:34:39] "GET /assets/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:34:39] "GET /assets/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:34:42] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:34:42] "GET /schedule/jobs/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:00] "GET /home/ HTTP/1.1" 401 -
+127.0.0.1 - - [19/Sep/2018 15:35:03] "POST /account/users/login/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:03] "GET /home/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:05] "GET /configuration/environments/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:07] "GET /configuration/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:07] "GET /configuration/services/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:08] "GET /deploy/apps/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:08] "GET /deploy/apps/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:10] "GET /configuration/relationship/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:13] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:13] "GET /schedule/jobs/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:15] "GET /deploy/apps/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:15] "GET /deploy/apps/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:16] "GET /deploy/fields/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:24] "GET /deploy/apps/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:24] "GET /deploy/apps/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:26] "GET /assets/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:26] "GET /assets/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:29] "GET /assets/hosts/1/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:33] "DELETE /assets/hosts/4 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:33] "GET /assets/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:34] "DELETE /assets/hosts/3 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:34] "GET /assets/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:41] "GET /deploy/apps/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:41] "GET /deploy/apps/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:42] "GET /deploy/images/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:35:51] "GET /deploy/images/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:36:56] "POST /deploy/images/add HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:36:56] "GET /deploy/images/ HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+HTTPSConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /v2/ubuntu/tags/list (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fe8681230f0>: Failed to establish a new connection: [Errno 111] Connection refused',))
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7fe8681230f0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /v2/ubuntu/tags/list (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fe8681230f0>: Failed to establish a new connection: [Errno 111] Connection refused',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/deploy/image.py", line 59, in sync_one
+    for tag in reg.list_tags(image.name):
+  File "/opt/samba/xdata/xdata/xdata_api/libs/utils.py", line 122, in list_tags
+    tags = requests.get(req_url, auth=self.auth).json().get('tags', [])
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/requests/adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /v2/ubuntu/tags/list (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fe8681230f0>: Failed to establish a new connection: [Errno 111] Connection refused',))
+127.0.0.1 - - [19/Sep/2018 15:37:02] "POST /deploy/images/sync/1 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:37:11] "GET /deploy/configs/image/1 HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+HTTPSConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /v2/_catalog (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fe868108ef0>: Failed to establish a new connection: [Errno 111] Connection refused',))
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7fe868108ef0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /v2/_catalog (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fe868108ef0>: Failed to establish a new connection: [Errno 111] Connection refused',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/deploy/image.py", line 39, in sync
+    images = reg.list_images()
+  File "/opt/samba/xdata/xdata/xdata_api/libs/utils.py", line 135, in list_images
+    res = requests.get(req_url, auth=self.auth).json()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/requests/adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /v2/_catalog (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fe868108ef0>: Failed to establish a new connection: [Errno 111] Connection refused',))
+127.0.0.1 - - [19/Sep/2018 15:37:21] "POST /deploy/images/sync HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:37:43] "GET /deploy/apps/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:37:43] "GET /deploy/apps/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:37:46] "GET /deploy/images/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:38:02] "POST /deploy/apps/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:38:02] "GET /deploy/apps/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:38:02] "GET /deploy/apps/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:38:04] "GET /deploy/apps/1/menus?type=all HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:38:04] "GET /configuration/environments/with_publish_permission HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:38:04] "GET /deploy/apps/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:38:10] "GET /assets/hosts/?page=-1 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:38:13] "POST /deploy/apps/1/bind/hosts HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:38:25] "POST /deploy/apps/1/bind/hosts HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:38:30] "GET /deploy/fields/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:38:32] "GET /deploy/menus/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:38:33] "GET /deploy/images/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:39:07] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:39:07] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:39:07] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:39:11] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%E5%8D%8E%E4%B8%9C2%E5%8C%BA%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:39:14] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 15:39:19] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%2201%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 15:39:25] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%E6%B5%8B%E8%AF%95-01%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+172.16.6.253 - - [19/Sep/2018 15:41:34] "GET /users/hosts HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 15:41:34] "GET /users/hosts/ HTTP/1.1" 200 -
+172.16.6.253 - - [19/Sep/2018 15:41:53] "GET /users/hosts?name_field=KÕ-01 HTTP/1.1" 301 -
+127.0.0.1 - - [19/Sep/2018 15:42:13] "PUT /users/hosts/4 HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 15:42:13] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%E6%B5%8B%E8%AF%95-01%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:42:13] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:42:13] "GET /users/hosts/type/ HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 15:42:18] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22test-01%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+172.16.6.253 - - [19/Sep/2018 15:43:55] "GET /users/hosts?name_field=test-01 HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 15:43:55] "GET /users/hosts/?name_field=test-01 HTTP/1.1" 200 -
+172.16.6.253 - - [19/Sep/2018 15:45:34] "GET /users/hosts?host_query=%7Bname_field:%22test-01%22%7D HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 15:45:34] "GET /users/hosts/?host_query=%7Bname_field:%22test-01%22%7D HTTP/1.1" 200 -
+172.16.6.253 - - [19/Sep/2018 15:45:45] "GET /users/hosts?%7Bhost_query=%7Bname_field:%22test-01%22%7D%7D HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 15:45:45] "GET /users/hosts/?%7Bhost_query=%7Bname_field:%22test-01%22%7D%7D HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 15:49:59] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22test-01%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 15:50:27] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22test-01%22,%22zone_field%22:%22%E5%8D%8E%E4%B8%9C1%E5%8C%BA%22%7D HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 15:50:30] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22test-01%22,%22zone_field%22:%22%E5%8D%8E%E4%B8%9C1%E5%8C%BA%22,%22type_field%22:%22MYSQL%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:52:42] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:52:47] "PUT /users/hosts/7 HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 15:52:47] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22test-01%22,%22zone_field%22:%22%E5%8D%8E%E4%B8%9C1%E5%8C%BA%22,%22type_field%22:%22MYSQL%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:52:47] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:52:47] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:52:48] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:52:50] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:52:53] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:54:00] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:54:00] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:54:00] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 15:54:01] "GET /deploy/images/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:12:27] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:12:27] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:12:27] "GET /users/hosts/type/ HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 16:12:33] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22test-01%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 16:12:37] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22test-01%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 16:12:46] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22test-01%22,%22zone_field%22:%22%E5%8D%8E%E4%B8%9C1%E5%8C%BA%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:12:50] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%E5%8D%8E%E4%B8%9C1%E5%8C%BA%22,%22type_field%22:%22MYSQL%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:12:54] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22,%22type_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:13:13] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:16:13] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:16:14] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:16:20] "PUT /users/hosts/7 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:16:20] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:16:20] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:16:20] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:16:21] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:16:22] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 16:16:41] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%2222%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:19:38] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:19:39] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:19:43] "DELETE /users/hosts/4 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:19:48] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22,%22type_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:19:51] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%E5%8D%8E%E4%B8%9C1%E5%8C%BA%22,%22type_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:19:52] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22,%22type_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:19:54] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%E5%8D%8E%E4%B8%9C2%E5%8C%BA%22,%22type_field%22:%22%22%7D HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'Host' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 28, in get
+    host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+NameError: name 'Host' is not defined
+127.0.0.1 - - [19/Sep/2018 16:19:58] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%2202%22,%22zone_field%22:%22%E5%8D%8E%E4%B8%9C2%E5%8C%BA%22,%22type_field%22:%22%22%7D HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/host.py', reloading
+host_ng {'page': 1, 'pagesize': 10, 'host_query': {'name_field': '', 'zone_field': ''}}
+host_ng {'page': 1, 'pagesize': 10, 'host_query': {'name_field': '', 'zone_field': ''}}
+host_ng {'page': 1, 'pagesize': 10, 'host_query': {'name_field': '', 'zone_field': ''}}
+host_ng {'page': 1, 'pagesize': 10, 'host_query': {'name_field': '', 'zone_field': ''}}
+host_ng {'page': 1, 'pagesize': 10, 'host_query': {'name_field': '', 'zone_field': ''}}
+host_ng {'page': -1, 'pagesize': 10, 'host_query': {'name_field': '', 'zone_field': ''}}
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/host.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+127.0.0.1 - - [19/Sep/2018 16:21:13] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%2202%22,%22zone_field%22:%22%22,%22type_field%22:%22MYSQL%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:21:14] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%2202%22,%22zone_field%22:%22%22,%22type_field%22:%22MYSQL%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:21:17] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%2202%22,%22zone_field%22:%22%22,%22type_field%22:%22MYSQL%22%7D HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/host.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/host.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+172.16.6.253 - - [19/Sep/2018 16:22:57] "GET /users/hosts?%7Bhost_query=%7Bname_field:%22test-01%22%7D%7D HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 16:22:57] "GET /users/hosts/?%7Bhost_query=%7Bname_field:%22test-01%22%7D%7D HTTP/1.1" 200 -
+172.16.6.253 - - [19/Sep/2018 16:23:20] "GET /users/hosts HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 16:23:20] "GET /users/hosts/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:31] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:31] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:31] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:32] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:32] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:32] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:36] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:36] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:36] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:41] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:42] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:46] "PUT /users/hosts/7 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:47] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:47] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:47] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:48] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:53] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:30:54] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:31:47] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:31:47] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:31:47] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:31:48] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:31:48] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:31:48] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:31:52] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:31:52] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:31:52] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:31:54] "GET /assets/hosts/4/valid HTTP/1.1" 404 -
+127.0.0.1 - - [19/Sep/2018 16:31:57] "GET /assets/hosts/4/valid HTTP/1.1" 404 -
+127.0.0.1 - - [19/Sep/2018 16:32:15] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:32:15] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:32:15] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:32:15] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:32:15] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:32:15] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:32:19] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:32:19] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:32:19] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:32:20] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:32:22] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+172.16.6.253 - - [19/Sep/2018 16:34:20] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:38] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:38] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:38] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:39] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:39] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:39] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:45] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:45] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:45] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:46] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:48] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:50] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:35:51] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:19] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:19] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:19] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:19] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:19] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:19] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:20] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:22] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:36] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:36] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:36] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:36] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:36] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:36] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:46] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:46] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:46] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:48] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:51] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:56] "PUT /users/hosts/7 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:57] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:57] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:36:57] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:37:03] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22test-01%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:37:08] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%2201%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:37:12] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:37:16] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%E6%B5%8B%E8%AF%95%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:37:21] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:37:48] "GET /users/hosts/4/extend/ HTTP/1.1" 404 -
+127.0.0.1 - - [19/Sep/2018 16:38:48] "GET /users/hosts/4/extend/ HTTP/1.1" 404 -
+127.0.0.1 - - [19/Sep/2018 16:39:23] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:39:23] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:39:23] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:39:23] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:39:23] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:39:23] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:40:16] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:40:16] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:40:16] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:40:16] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:40:16] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:40:16] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:41:10] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:41:10] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:41:10] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:41:10] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:41:10] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:41:10] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:41:17] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:41:17] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:41:17] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:42:17] "GET /users/hosts/4/extend/ HTTP/1.1" 404 -
+127.0.0.1 - - [19/Sep/2018 16:42:17] "GET /users/hosts/4/extend/ HTTP/1.1" 404 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/host.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+172.16.6.253 - - [19/Sep/2018 16:53:23] "GET /users/hosts/4/extend HTTP/1.1" 301 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'HostExtend' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 97, in get_extend
+    host_extend = HostExtend.query.filter_by(user_id=user_id).first()
+NameError: name 'HostExtend' is not defined
+172.16.6.253 - - [19/Sep/2018 16:53:23] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/host.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+127.0.0.1 - - [19/Sep/2018 16:53:44] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:53:44] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:53:44] "GET /users/hosts/type/ HTTP/1.1" 200 -
+172.16.6.253 - - [19/Sep/2018 16:53:48] "GET /users/hosts/4/extend HTTP/1.1" 301 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+'User' object has no attribute 'first'
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 97, in get_extend
+    host_extend = User.query.get_or_404(user_id).first()
+AttributeError: 'User' object has no attribute 'first'
+172.16.6.253 - - [19/Sep/2018 16:53:48] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/host.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+172.16.6.253 - - [19/Sep/2018 16:54:21] "GET /users/hosts/4/extend HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 16:54:21] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+172.16.6.253 - - [19/Sep/2018 16:54:27] "GET /users/hosts/5/extend HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 16:54:27] "GET /users/hosts/5/extend/ HTTP/1.1" 404 -
+172.16.6.253 - - [19/Sep/2018 16:54:32] "GET /users/hosts/5/extend HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 16:54:32] "GET /users/hosts/5/extend/ HTTP/1.1" 404 -
+172.16.6.253 - - [19/Sep/2018 16:54:36] "GET /users/hosts/4/extend HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 16:54:36] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+172.16.6.253 - - [19/Sep/2018 16:54:53] "GET /users/hosts/7/extend HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 16:54:53] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:55:21] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:55:22] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:55:27] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:55:29] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:04] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:04] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:04] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:04] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:04] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:04] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:05] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:06] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:22] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:22] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:22] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:24] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:25] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:35] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:36] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:37] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:38] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:44] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:45] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:57:46] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:00] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:00] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:00] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:00] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:00] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:00] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:05] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:06] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:12] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:12] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:13] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:14] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 16:59:15] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+172.16.6.253 - - [19/Sep/2018 17:00:28] "GET /users/hosts/7/extend HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 17:00:28] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:00:32] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:00:33] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:00:35] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:00:36] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:00:37] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:00:39] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:00:39] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:00:43] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:01:35] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:01:36] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:01:48] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%E6%B5%8B%E8%AF%95%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:01:53] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:01:55] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:02:04] "GET /home/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:02:09] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:02:09] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:02:09] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:03:23] "DELETE /users/hosts/4 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:07:27] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:07:27] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:07:27] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:16:34] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:16:34] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:16:34] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:16:34] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:16:34] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:16:34] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:02] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:02] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:02] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:02] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:02] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:02] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:10] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:11] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:26] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:26] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:26] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:26] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:26] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:26] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:56] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:56] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:56] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:56] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:56] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 17:28:56] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:09] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:09] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:09] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:09] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:09] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:09] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:15] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:15] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:15] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:26] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:26] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:26] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:57] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:57] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:57] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:57] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:57] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:07:57] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:08:21] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:08:21] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:08:21] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:10] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:10] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:10] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:10] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:10] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:10] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:15] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:15] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:15] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:52] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:52] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:52] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:52] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:52] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:52] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:57] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:57] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:09:57] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:16] "GET /home/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:21] "GET /schedule/jobs/?page=1&job_group= HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:21] "GET /schedule/jobs/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:22] "GET /deploy/apps/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:22] "GET /deploy/apps/groups/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:23] "GET /deploy/fields/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:24] "GET /deploy/menus/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:26] "GET /assets/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:26] "GET /assets/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:43] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:43] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:43] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:45] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:58] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:58] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:58] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:58] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:58] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:10:58] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:11:09] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:11:12] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:11:14] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+172.16.6.253 - - [19/Sep/2018 18:11:26] "GET /users/hosts/7/extend HTTP/1.1" 301 -
+172.16.6.253 - - [19/Sep/2018 18:11:26] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:20:00] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:20:00] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:20:00] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:32:16] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:32:16] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:32:16] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:34:29] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:34:29] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:34:29] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:34:29] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:34:29] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:34:29] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:34:56] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:34:56] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:34:56] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:35:51] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:37:06] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:37:06] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:37:06] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:37:30] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:38:09] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:38:09] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:38:09] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:38:25] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:39:10] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:39:10] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:39:10] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:39:20] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:39:22] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:39:46] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:39:47] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:39:48] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:40:17] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:40:19] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:40:19] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:40:37] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:40:39] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:40:40] "GET /users/hosts/4/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:40:41] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:40:41] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:40:43] "GET /users/hosts/7/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:41:03] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:41:16] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:41:18] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:41:19] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:41:20] "GET /users/hosts/4/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:41:22] "GET /users/hosts/7/valid HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:41:28] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%E6%B5%8B%E8%AF%95%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:41:32] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%E5%8D%8E%E4%B8%9C1%E5%8C%BA%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2018 18:41:35] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22,%22type_field%22:%22MYSQL%22%7D HTTP/1.1" 200 -

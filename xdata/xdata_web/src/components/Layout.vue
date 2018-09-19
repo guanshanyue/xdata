@@ -4,6 +4,7 @@
 <template>
     <div class="layout-wrapper">
         <div class="layout-side" :class="{'layout-side-extend': !isCollapse}">
+            <el-scrollbar style="height:100%">
             <div class="layout-logo" v-if="!isCollapse">xdata运维平台</div>
             <div class="layout-logo" v-else>S</div>
             <el-menu :collapse="isCollapse" :default-active="current_index" @select="handleSelect" unique-opened router>
@@ -21,6 +22,7 @@
                     </el-menu-item>
                 </template>
             </el-menu>
+            </el-scrollbar>
         </div>
         <div class="layout-main">
             <div class="layout-header">

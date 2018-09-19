@@ -26,13 +26,12 @@
             <el-table-column type="expand">
                 <template slot-scope="props">
                     <el-form v-if="props.row.extend" label-position="left" inline class="demo-table-expand">
-                        <el-form-item label="操作系统"><span>{{ props.row.extend.operate_system }}</span></el-form-item>
-                        <el-form-item label="内存"><span>{{ props.row.extend.memory }} G</span></el-form-item>
-                        <el-form-item label="CPU"><span>{{ props.row.extend.cpu }} 核</span></el-form-item>
-                        <el-form-item label="硬盘"><span>{{ props.row.extend.disk }} G</span></el-form-item>
-                        <el-form-item label="外网IP"><span>{{ props.row.extend.outer_ip }}</span></el-form-item>
-                        <el-form-item label="内网IP"><span>{{ props.row.extend.inner_ip }}</span></el-form-item>
-                        <el-form-item label="SSh端口"><span>{{ props.row.ssh_port }}</span></el-form-item>
+                        <el-form-item label="所属区域"><span>{{ props.row.extend.zone }}</span></el-form-item>
+                        <el-form-item label="数据库类型"><span>{{ props.row.extend.type }}</span></el-form-item>
+                        <el-form-item label="数据库名称"><span>{{ props.row.extend.name }}</span></el-form-item>
+                        <el-form-item label="数据库地址"><span>{{ props.row.extend.db_host }}</span></el-form-item>
+                        <el-form-item label="数据库账号"><span>{{ props.row.extend.db_user }}</span></el-form-item>
+                        <el-form-item label="数据库端口"><span>{{ props.row.extend.db_user }}</span></el-form-item>
                         <el-form-item label="备注信息"><span>{{ props.row.desc }}</span></el-form-item>
                     </el-form>
                     <el-row v-else style="text-align: center">
@@ -41,16 +40,17 @@
                 </template>
             </el-table-column>
 
-            <el-table-column prop="name" label="数据库名称"></el-table-column>
-            <el-table-column prop="zone" label="所属区域"></el-table-column>
-            <el-table-column prop="type" label="类型"></el-table-column>
-            <el-table-column prop="db_host" label="数据库地址" width="180"></el-table-column>
-            <el-table-column prop="db_user" label="账号"></el-table-column>
-            <el-table-column prop="db_port" label="端口"></el-table-column>
-            <el-table-column label="操作" width="240px" v-if="has_permission('users_host_edit|users_host_del|users_host_valid')">
+            <el-table-column prop="name" label="数据库名称" width="160px"></el-table-column>
+            <el-table-column prop="zone" label="所属区域" width="160px"></el-table-column>
+            <el-table-column prop="type" label="数据库类型" width="160px"></el-table-column>
+            <el-table-column prop="db_host" label="数据库地址" width="160px"></el-table-column>
+            <el-table-column label="操作" width="400px" v-if="has_permission('users_host_edit|users_host_del|users_host_valid')">
                 <template slot-scope="scope">
                     <el-button v-if="has_permission('users_host_edit')" size="small" @click="handleEdit(scope.row)">编辑</el-button>
                     <el-button v-if="has_permission('users_host_valid')" size="small" type="primary" @click="valid(scope.row)"
+                               :loading="btnValidLoading[scope.row.id]">新增用户
+                    </el-button>
+                    <el-button v-if="has_permission('users_host_valid')" size="small" type="success" @click="valid(scope.row)"
                                :loading="btnValidLoading[scope.row.id]">验证
                     </el-button>
                     <el-button v-if="has_permission('users_host_del')" size="small" type="danger" @click="deleteCommit(scope.row)"
@@ -279,30 +279,10 @@
                 this.btnValidLoading = {[row.id]: true};
                 this.$http.get(`/api/users/hosts/${row.id}/valid`).then(() => {
                     this.$layer_message('验证通过', 'success');
-                    this.btnValidLoading = {}
+                    this.btnValidLoading = {};
                 }, res => {
-                    if (res.result === 'ssh fail') {
-                        this.$prompt('请输入root用户密码', {
-                            inputType: 'password',
-                            inputPattern: /.+/,
-                            inputErrorMessage: '请输入',
-                            closeOnClickModal: false
-                        }).then(({value}) => {
-                            this.$http.post(`/api/users/hosts/${row.id}/valid`, {secret: value}).then(() => {
-                                this.$layer_message('验证通过', 'success')
-                            }, res => this.$layer_message(res.result)).finally(() => this.btnValidLoading = {})
-                        }).catch(() => {
-                            this.$layer_message('取消验证', 'warning');
-                            this.btnValidLoading = {}
-                        })
-                    } else if (res.result === 'docker fail') {
-                        this.btnValidLoading = {};
-                        this.$layer_message('获取扩展信息失败，请检查docker是否可以正常连接', 'warning')
-                    } else {
-                        this.btnValidLoading = {};
-                        this.$layer_message(res.result);
-                    }
-
+                    this.btnValidLoading = {};
+                    this.$layer_message(res.result);
                 })
             },
             addZone () {

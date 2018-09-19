@@ -18,16 +18,18 @@ def get():
     form, error = JsonParser(Argument('page', type=int, default=1, required=False),
                              Argument('pagesize', type=int, default=10, required=False),
                              #Argument('host_query', type=dict, required=False), 
-                             Argument('host_query', type=dict, default={"name_field":"","zone_field":""}, required=False),).parse(request.args)
+                             Argument('host_query', type=dict, default={"name_field":"","zone_field":"","type_field":""}, required=False),).parse(request.args)
     if error is None:
         #print('host_ng', form)
         host_data = User.query
         if form.page == -1:
             return json_response({'data': [x.to_json() for x in host_data.all()], 'total': -1})
         if form.host_query.get('name_field'):
-            host_data = host_data.filter(Host.name.like('%{}%'.format(form.host_query['name_field'])))
+            host_data = host_data.filter(User.name.like('%{}%'.format(form.host_query['name_field'])))
         if form.host_query.get('zone_field'):
             host_data = host_data.filter_by(zone=form.host_query['zone_field'])
+        if form.host_query.get('type_field'):
+            host_data = host_data.filter_by(type=form.host_query['type_field'])
 
         result = host_data.limit(form.pagesize).offset((form.page - 1) * form.pagesize).all()
         return json_response({'data': [x.to_json() for x in result], 'total': host_data.count()})
@@ -88,6 +90,12 @@ def get_valid(user_id):
             return json_response()
     except Exception as e:
         return json_response(message='连接失败')
+
+@blueprint.route('/<int:user_id>/extend/', methods=['GET'])
+@require_permission('users_host_valid')
+def get_extend(user_id):
+    host_extend = User.query.get_or_404(user_id)
+    return json_response(host_extend)
 
     
 
