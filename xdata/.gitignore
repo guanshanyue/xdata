@@ -1,5 +1,6 @@
 .idea/
 *.pyc
+*nohup.out
 /.git/
 .DS_Store
 /xdata_web/node_modules/
@@ -8,5 +9,4 @@
 /xdata_api/config.py
 /xdata_api/test.db
 /xdata_api/venv/
-/xdata_web/nohup.out
-/xdata_api/nohup.out
+/xdata_api/migrations/
