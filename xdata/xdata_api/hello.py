@@ -22,6 +22,7 @@ manager = Manager(app)
 migrate = Migrate(app,db) 
 
 #manager是Flask-Script的实例，这条语句在flask-Script中添加一个db命令
+#123
 manager.add_command('db',MigrateCommand)
 if __name__ == '__main__':
      manager.run()
