@@ -47,8 +47,8 @@
             <el-table-column label="操作" width="400px" v-if="has_permission('users_host_edit|users_host_del|users_host_valid')">
                 <template slot-scope="scope">
                     <el-button v-if="has_permission('users_host_edit')" size="small" @click="handleEdit(scope.row)">编辑</el-button>
-                    <el-button v-if="has_permission('users_host_valid')" size="small" type="primary" @click="valid(scope.row)"
-                               :loading="btnValidLoading[scope.row.id]">新增用户
+                    <el-button v-if="has_permission('users_info_add')" size="small" type="primary" @click="userAdd(scope.row)"
+                               >新增用户
                     </el-button>
                     <el-button v-if="has_permission('users_host_valid')" size="small" type="success" @click="valid(scope.row)"
                                :loading="btnValidLoading[scope.row.id]">验证
@@ -59,7 +59,7 @@
                 </template>
             </el-table-column>
         </el-table>
-
+        <adduser v-if="dialogPerVisible" :role="formuser" @close="dialogPerVisible = false"></adduser>
         <!--分页-->
         <div class="pagination-bar" v-if="hosts.total > 10">
             <el-pagination
@@ -143,7 +143,11 @@
 
 <script>
     import envs from '../../config/env'
+    import Adduser from './Adduser.vue'
     export default {
+        components: {
+            adduser: Adduser
+        },
         data () {
             return {
                 host_zone: '',
@@ -169,6 +173,8 @@
                 tp_file:'',
                 import_loading: false,
                 download_url: envs.apiServer + "/apis/files/download/host.xls",
+                formuser: {},
+                dialogPerVisible: false
             }
         },
         methods: {
@@ -188,6 +194,11 @@
                 this.fetch(this.currentPage);
             },
 
+            //新增用户
+            userAdd(row) {
+                this.formuser = this.$deepCopy(row);
+                this.dialogPerVisible = true;
+            },
             //获取区域
             get_host_zone () {
                 this.$http.get('/api/users/hosts/zone/').then(res => {

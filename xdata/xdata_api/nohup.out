@@ -22,3 +22,422 @@
 127.0.0.1 - - [20/Sep/2018 17:31:33] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
 127.0.0.1 - - [20/Sep/2018 17:31:34] "GET /users/hosts/zone/ HTTP/1.1" 200 -
 127.0.0.1 - - [20/Sep/2018 17:31:34] "GET /users/hosts/type/ HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/models.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    from apps import users
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/__init__.py", line 1, in <module>
+    from apps.users import host
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/host.py", line 2, in <module>
+    from apps.users.models import  User, UserInfo
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/models.py", line 37, in <module>
+    class UserPriv(db.Model, ModelMixin):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 602, in __init__
+    DeclarativeMeta.__init__(self, name, bases, d)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/sqlalchemy/ext/declarative/api.py", line 64, in __init__
+    _as_declarative(cls, classname, cls.__dict__)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/sqlalchemy/ext/declarative/base.py", line 88, in _as_declarative
+    _MapperConfig.setup_mapping(cls, classname, dict_)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/sqlalchemy/ext/declarative/base.py", line 103, in setup_mapping
+    cfg_cls(cls_, classname, dict_)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/sqlalchemy/ext/declarative/base.py", line 131, in __init__
+    self._setup_table()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/sqlalchemy/ext/declarative/base.py", line 395, in _setup_table
+    **table_kw)
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/sqlalchemy/sql/schema.py", line 421, in __new__
+    "existing Table object." % key)
+sqlalchemy.exc.InvalidRequestError: Table 'user_accounts' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+ * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+127.0.0.1 - - [20/Sep/2018 17:43:26] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:43:26] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:43:26] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:44:14] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:44:14] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:44:14] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:44:23] "GET /account/users/?page=1&name= HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:44:23] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:44:24] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:45:17] "POST /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:45:17] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:45:19] "GET /account/roles/1/permissions HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:45:38] "POST /account/roles/1/permissions HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:48:31] "GET /account/roles/1/permissions HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:50:35] "GET /account/roles/1/permissions HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:50:59] "GET /account/roles/1/permissions HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:51:06] "POST /account/roles/1/permissions HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:51:07] "GET /account/users/?page=1&name= HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:51:07] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:51:23] "POST /account/users/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Sep/2018 17:51:23] "GET /account/users/?page=1&name= HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:27] "GET /home/ HTTP/1.1" 401 -
+127.0.0.1 - - [21/Sep/2018 09:08:29] "POST /account/users/login/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:29] "GET /home/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:31] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:31] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:31] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:35] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:35] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:35] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:45] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:46] "GET /account/roles/1/permissions HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:55] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:55] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:08:55] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:09:34] "POST /users/hosts/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:09:34] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:09:34] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:09:34] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:09:35] "GET /users/hosts/1/valid HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:09:44] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:10:18] "POST /users/hosts/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:10:19] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:10:19] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:10:19] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:10:20] "GET /users/hosts/2/valid HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:10:26] "GET /users/hosts/1/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:10:26] "GET /users/hosts/1/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:10:29] "GET /users/hosts/1/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:10:30] "GET /users/hosts/2/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:10:31] "GET /users/hosts/2/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:10:33] "GET /users/hosts/1/valid HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:10:36] "GET /users/hosts/2/extend/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:16:09] "GET /account/roles/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:16:10] "GET /account/roles/1/permissions HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:18:22] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:18:22] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:18:22] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:18:24] "GET /users/hosts/1/valid HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:18:27] "GET /users/hosts/1/valid HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:18:36] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:18:37] "GET /users/hosts/1/valid HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:18:38] "GET /users/hosts/2/valid HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:21:18] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:21:18] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:21:18] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:35:21] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:35:21] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:35:21] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:36:10] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:36:10] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:36:10] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:36:47] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:36:47] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:36:47] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:36:53] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:36:53] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:36:53] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:39:11] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:39:11] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:39:11] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:39:22] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:39:22] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:39:22] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:46:14] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:46:14] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:46:14] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:53:28] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:53:28] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 09:53:28] "GET /users/hosts/type/ HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/host.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    from apps import users
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/__init__.py", line 2, in <module>
+    from apps.users import host_exec
+ImportError: cannot import name 'host_exec'
+ * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/__init__.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    from apps import users
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/__init__.py", line 3, in <module>
+    from apps.users import user_info
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py", line 17
+    Argument('desc', nullable=True, required=False)).parse()
+           ^
+SyntaxError: invalid syntax
+ * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+172.16.6.253 - - [21/Sep/2018 14:39:59] "POST /users/user_info/ HTTP/1.1" 200 -
+172.16.6.253 - - [21/Sep/2018 14:41:30] "GET /users/user_info/1/database HTTP/1.1" 401 -
+172.16.6.253 - - [21/Sep/2018 14:49:23] "GET /users/user_info/1/database HTTP/1.1" 401 -
+172.16.6.253 - - [21/Sep/2018 14:49:46] "GET /users/user_info/1/database HTTP/1.1" 404 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+172.16.6.253 - - [21/Sep/2018 14:50:46] "GET /users/user_info/1/database HTTP/1.1" 301 -
+172.16.6.253 - - [21/Sep/2018 14:50:46] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+127.0.0.1 - - [21/Sep/2018 14:52:54] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 14:52:54] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 14:52:54] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 14:52:55] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 14:52:55] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 14:52:55] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 14:52:56] "GET /users/user_info/2/database HTTP/1.1" 301 -
+127.0.0.1 - - [21/Sep/2018 14:53:07] "GET /users/user_info/1/database HTTP/1.1" 301 -
+127.0.0.1 - - [21/Sep/2018 14:53:36] "GET /users/user_info/1/database HTTP/1.1" 301 -
+127.0.0.1 - - [21/Sep/2018 15:02:19] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:02:19] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:02:19] "GET /users/hosts/type/ HTTP/1.1" 200 -
+172.16.6.253 - - [21/Sep/2018 15:02:41] "GET /users/user_info/1/database HTTP/1.1" 301 -
+172.16.6.253 - - [21/Sep/2018 15:02:41] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:08:56] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:08:56] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:08:56] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:09:00] "GET /users/hosts/3/valid HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:09:01] "GET /users/hosts/2/valid HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:09:02] "GET /users/user_info/2/database HTTP/1.1" 301 -
+127.0.0.1 - - [21/Sep/2018 15:10:03] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:10:03] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:10:03] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:11:25] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:11:25] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:11:25] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:11:29] "GET /users/user_info/1/database HTTP/1.1" 301 -
+127.0.0.1 - - [21/Sep/2018 15:12:01] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:12:01] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:12:01] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:12:03] "GET /users/user_info/4/database HTTP/1.1" 301 -
+127.0.0.1 - - [21/Sep/2018 15:18:09] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:18:09] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:18:09] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:18:34] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:18:34] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:18:34] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:18:37] "GET /users/user_info/2/database HTTP/1.1" 301 -
+172.16.6.253 - - [21/Sep/2018 15:19:02] "GET /users/user_info/2/database HTTP/1.1" 301 -
+172.16.6.253 - - [21/Sep/2018 15:19:02] "GET /users/user_info/2/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:19:41] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:19:41] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:19:41] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:19:54] "PUT /users/hosts/2 HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:19:54] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:19:54] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:19:54] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:22:08] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:22:26] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:22:26] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:22:26] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:22:27] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:22:40] "GET /users/user_info/2/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:26:53] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:39:49] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:40:03] "GET /users/hosts/3/valid HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:40:04] "GET /users/user_info/3/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:40:10] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:41:00] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:43:29] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:44:28] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:44:35] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:47:26] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:47:38] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:48:08] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:48:15] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:51:44] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:51:47] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:51:47] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:51:47] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:51:49] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:52:04] "GET /users/user_info/2/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:52:08] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:52:08] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:52:08] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:52:14] "GET /users/user_info/5/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:54:56] "GET /users/user_info/5/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:55:06] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:55:06] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:55:06] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:55:10] "GET /users/user_info/2/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:55:21] "POST /users/hosts/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 15:57:02] "GET /users/user_info/2/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:04:16] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:04:16] "GET /users/user_info/2/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:04:37] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:04:44] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:04:44] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:04:58] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:05:06] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:05:18] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:05:29] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:07:35] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:13:13] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:13:27] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:13:27] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:17:07] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:22:16] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:22:29] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:22:29] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:22:49] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:22:53] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:23:57] "GET /account/users/self HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:10] "POST /account/users/setting/password HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:10] "GET /account/users/logout/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:17] "POST /account/users/login/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:23] "POST /account/users/login/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:23] "GET /home/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:29] "GET /account/users/logout/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:31] "POST /account/users/login/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:32] "GET /home/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:36] "GET /account/users/self HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:43] "POST /account/users/setting/password HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:43] "GET /account/users/logout/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:46] "POST /account/users/login/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:24:46] "GET /home/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:25:00] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:25:00] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:25:00] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:25:02] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:31:16] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:31:20] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:31:27] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:31:27] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:31:27] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:31:28] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:31:47] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:31:47] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:31:47] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:31:49] "GET /users/user_info/2/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:32:13] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:32:13] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:32:13] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:32:21] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:35:02] "GET /home/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:35:05] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:35:05] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:35:05] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:35:06] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:36:06] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:38:21] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:41:12] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:41:12] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:41:12] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:41:13] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:42:38] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:44:29] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:48:17] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:48:29] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:50:23] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:51:10] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:51:18] "GET /users/hosts/?page=1&host_query=%7B%22name_field%22:%22%22,%22zone_field%22:%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:51:18] "GET /users/hosts/zone/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:51:18] "GET /users/hosts/type/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:51:19] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:54:07] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:54:57] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:56:00] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:56:28] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:56:28] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:56:40] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:57:07] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:57:21] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:57:22] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:57:32] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:57:42] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:58:06] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:58:10] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 16:58:17] "GET /users/hosts/1/valid HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+172.16.6.253 - - [21/Sep/2018 17:04:52] "POST /users/user_info/ HTTP/1.1" 401 -
+127.0.0.1 - - [21/Sep/2018 17:05:22] "GET /account/users/logout/ HTTP/1.1" 401 -
+127.0.0.1 - - [21/Sep/2018 17:05:27] "POST /account/users/login/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 17:05:28] "GET /home/ HTTP/1.1" 200 -
+172.16.6.253 - - [21/Sep/2018 17:05:39] "POST /users/user_info/ HTTP/1.1" 200 -
+172.16.6.253 - - [21/Sep/2018 17:05:49] "POST /users/user_info/ HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'db_database' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py", line 26, in post
+    userpriv = UserPriv(account_id=host.id,db_database=db_database,db_priv=db_priv)
+NameError: name 'db_database' is not defined
+172.16.6.253 - - [21/Sep/2018 17:06:01] "POST /users/user_info/ HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+--------------------------------------------------------------------------------
+ERROR in middleware [/opt/samba/xdata/xdata/xdata_api/libs/middleware.py:40]:
+name 'userinfo' is not defined
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/samba/xdata/xdata/xdata_api/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/opt/samba/xdata/xdata/xdata_api/libs/decorators.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py", line 27, in post
+    userinfo.save()
+NameError: name 'userinfo' is not defined
+172.16.6.253 - - [21/Sep/2018 17:07:28] "POST /users/user_info/ HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+172.16.6.253 - - [21/Sep/2018 17:07:57] "POST /users/user_info/ HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+127.0.0.1 - - [21/Sep/2018 17:11:32] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+172.16.6.253 - - [21/Sep/2018 17:11:41] "POST /users/user_info/ HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+127.0.0.1 - - [21/Sep/2018 17:13:43] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 17:13:56] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 17:13:56] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+ * Detected change in '/opt/samba/xdata/xdata/xdata_api/apps/users/user_info.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 286-050-437
+127.0.0.1 - - [21/Sep/2018 17:16:59] "GET /users/user_info/1/database/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 17:17:08] "POST /users/user_info/ HTTP/1.1" 200 -
+127.0.0.1 - - [21/Sep/2018 17:17:08] "GET /users/user_info/1/database/ HTTP/1.1" 200 -

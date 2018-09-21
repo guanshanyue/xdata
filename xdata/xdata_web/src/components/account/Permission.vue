@@ -56,6 +56,29 @@
                 <tag-td :item="codes['assets_host_exec_tpl_del']"></tag-td>
             </tr>
             <tr>
+                <td rowspan="4">数据库管理</td>
+                <td rowspan="2">数据库列表</td>
+                <tag-td :item="codes['users_host_view']"></tag-td>
+                <tag-td :item="codes['users_host_add']"></tag-td>
+                <tag-td :item="codes['users_host_edit']"></tag-td>
+            </tr>
+             <tr>
+                <tag-td :item="codes['users_host_del']"></tag-td>
+                <tag-td :item="codes['users_host_valid']"></tag-td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="2">用户列表</td>
+                <tag-td :item="codes['users_info_view']"></tag-td>
+                <tag-td :item="codes['users_info_add']"></tag-td>
+                <tag-td :item="codes['users_info_edit']"></tag-td>
+            </tr>
+             <tr>
+                <tag-td :item="codes['users_info_del']"></tag-td>
+                <tag-td :item="codes['users_info_valid']"></tag-td>
+                <td></td>
+            </tr>
+            <tr>
                 <td rowspan="14">应用发布</td>
                 <td rowspan="5">应用列表</td>
                 <tag-td :item="codes['publish_app_view']"></tag-td>
@@ -187,18 +210,7 @@
                 <tag-td :item="codes['job_task_log']"></tag-td>
                 <td></td>
             </tr>
-            <tr>
-                <td rowspan="2">数据库管理</td>
-                <td rowspan="2">数据库列表</td>
-                <tag-td :item="codes['users_host_view']"></tag-td>
-                <tag-td :item="codes['users_host_add']"></tag-td>
-                <tag-td :item="codes['users_host_edit']"></tag-td>
-            </tr>
-             <tr>
-                <tag-td :item="codes['users_host_del']"></tag-td>
-                <tag-td :item="codes['users_host_valid']"></tag-td>
-                <td></td>
-            </tr>
+            
         </table>
         <el-table v-else v-loading="loading"></el-table>
         <div slot="footer">

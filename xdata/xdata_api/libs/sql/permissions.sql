@@ -120,3 +120,10 @@ INSERT INTO account_permissions (id, name, `desc`) VALUES (1302, 'users_host_add
 INSERT INTO account_permissions (id, name, `desc`) VALUES (1303, 'users_host_edit', '编辑数据库');
 INSERT INTO account_permissions (id, name, `desc`) VALUES (1304, 'users_host_del', '删除数据');
 INSERT INTO account_permissions (id, name, `desc`) VALUES (1305, 'users_host_valid', '验证数据库');
+
+-- 数据库管理 -> 用户列表
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1401, 'users_info_view', '获取数据库列表');
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1402, 'users_info_add', '添加数据库');
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1403, 'users_info_edit', '编辑数据库');
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1404, 'users_info_del', '删除数据');
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1405, 'users_info_valid', '验证数据库');

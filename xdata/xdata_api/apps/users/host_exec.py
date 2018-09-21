@@ -102,4 +102,3 @@ def hosts_exec(q, ip, port, command):
         q.put({ip: line})
     q.put({ip: '\n** 执行完成 **'})
     q.done()
-
