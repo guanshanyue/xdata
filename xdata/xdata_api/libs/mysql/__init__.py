@@ -17,5 +17,14 @@ def mysql_valid(ip,user,password,port):
                 return True
         except Exception as e:
             return False
-if __name__ == "__main__":
-    print(mysql_valid('127.0.0.1','root','111111',3306))
+
+#获取数据库连接对象
+def mysql_conn(ip,user,password,port):
+    try:
+        with MysqlClient(ip=ip, user=user, password=password, port=port) as f:
+            return f
+        except Exception as e:
+            return False
+def mysql_conn(ip,user,password,port):
+    db = pymysql.connect(host=ip,user=user,passwd=password,db=db,charset='utf8mb4',port=port)
+    return db

@@ -7,6 +7,7 @@ from public import db
 from libs.decorators import require_permission
 from libs.utils import MysqlClient
 from apps.assets.utils import excel_parse
+from libs import mysql
 
 
 blueprint = Blueprint(__name__, __name__)
@@ -87,6 +88,7 @@ def get_valid(user_id):
     cli = User.query.get_or_404(user_id)
     try:
         with MysqlClient(ip=cli.db_host, user=cli.db_user, password=cli.db_password, port=cli.db_port):
+        #mysql.mysql_valid(ip=cli.db_host, user=cli.db_user, password=cli.db_password, port=cli.db_port):
             return json_response()
     except Exception as e:
         return json_response(message='连接失败')
