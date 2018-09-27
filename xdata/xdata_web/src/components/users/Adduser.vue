@@ -107,12 +107,6 @@
            
            // 提交按钮
             saveCommit() {
-                /*this.btnSaveLoading = true;
-                this.editForm.user_id = this.role.id;
-                this.$http.post(`/api/users/user_info/`, this.editForm).then(() => {
-                    this.visible = false
-                }, res => this.$layer_message('提交成功', 'success')).finally(() => this.btnSaveLoading = false);*/
-
                 this.btnSaveLoading = true;
                 this.editForm.user_id = this.role.id;
                 let request;

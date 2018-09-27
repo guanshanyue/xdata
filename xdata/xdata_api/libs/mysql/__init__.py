@@ -25,6 +25,14 @@ def mysql_conn(ip,user,password,port):
             return f
         except Exception as e:
             return False
-def mysql_conn(ip,user,password,port):
-    db = pymysql.connect(host=ip,user=user,passwd=password,db=db,charset='utf8mb4',port=port)
-    return db
+
+#数据库权限授权
+def mysql_priv(ip,user,password,port,db,priv):
+    try:
+        with MysqlClient(ip=ip, user=user, password=password, port=port) as f:
+            if priv == 0:
+                sql1 = "create user '"+form.db_user+"'@'%' "+"identified by '"+form.db_password+"';"
+                sql2 = "grant select on "+form.db_database+".* to '"+form.db_user+"'@'%';"
+        except Exception as e:
+            return False
+

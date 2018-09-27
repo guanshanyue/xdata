@@ -7,6 +7,17 @@ import json
 import time
 import six
 
+def list_to_json(data,*args):
+    ret = []
+    for i in data:
+        item = {}
+        n = 0
+        if len(i)<=len(args):
+            for j in i:
+                item[args[n]] = j
+                n = n+1
+        ret.append(item)
+    return ret
 
 def human_time(date=None):
     if date:

@@ -50,6 +50,9 @@
                     <el-button v-if="has_permission('users_info_add')" size="small" type="primary" @click="userAdd(scope.row)"
                                >新增用户
                     </el-button>
+                    <el-button v-if="has_permission('users_info_edit')" size="small" type="primary" @click="userEdit(scope.row)"
+                               >管理
+                    </el-button>
                     <el-button v-if="has_permission('users_host_valid')" size="small" type="success" @click="valid(scope.row)"
                                :loading="btnValidLoading[scope.row.id]">验证
                     </el-button>
@@ -60,6 +63,7 @@
             </el-table-column>
         </el-table>
         <adduser v-if="dialogPerVisible" :role="formuser" @close="dialogPerVisible = false"></adduser>
+        <userinfo v-if="dialogUserInfoVisible" :role="formuserinfo" @close="dialogUserInfoVisible = false"></userinfo>
         <!--分页-->
         <div class="pagination-bar" v-if="hosts.total > 10">
             <el-pagination
@@ -94,8 +98,8 @@
                         <el-form-item label="数据库账号" prop="db_user" required>
                             <el-input v-model="form.db_user"></el-input>
                         </el-form-item>
-                        <el-form-item label="数据库密码" prop="db_password" required>
-                            <el-input v-model="form.db_password"></el-input>
+                        <el-form-item  label="数据库密码" prop="db_password" required>
+                            <el-input type="password" v-model="form.db_password"></el-input>
                         </el-form-item>
                         <el-form-item label="数据库端口" prop="db_port" required>
                             <el-input v-model="form.db_port"></el-input>
@@ -144,9 +148,11 @@
 <script>
     import envs from '../../config/env'
     import Adduser from './Adduser.vue'
+    import UserInfo from './UserInfo.vue'
     export default {
         components: {
-            adduser: Adduser
+            adduser: Adduser,
+            userinfo: UserInfo
         },
         data () {
             return {
@@ -154,6 +160,7 @@
                 host_query: {
                     name_field: '',
                     zone_field: '',
+                    type_field: ''
                 },
                 dialogVisible: false,
                 btnSaveLoading: false,
@@ -174,7 +181,9 @@
                 import_loading: false,
                 download_url: envs.apiServer + "/apis/files/download/host.xls",
                 formuser: {},
-                dialogPerVisible: false
+                dialogPerVisible: false,
+                formuserinfo: {},
+                dialogUserInfoVisible: false
             }
         },
         methods: {
@@ -199,6 +208,13 @@
                 this.formuser = this.$deepCopy(row);
                 this.dialogPerVisible = true;
             },
+
+            //管理用户
+            userEdit(row) {
+                this.formuserinfo = this.$deepCopy(row);
+                this.dialogUserInfoVisible = true;
+            },
+
             //获取区域
             get_host_zone () {
                 this.$http.get('/api/users/hosts/zone/').then(res => {

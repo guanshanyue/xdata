@@ -408,3 +408,12 @@ class MysqlClient(object):
             data = [c for i in result for c in i]
             return data
 
+    def reset_password(self,db_user,db_password):
+        sql = "update mysql.user set password=password('"+db_password+"') where user='"+db_user+"';"
+        with self.con.cursor() as cursor:
+            cursor.execute(sql)
+            cursor.execute('flush privileges;')
+            result = cursor.fetchall()
+            data = [c for i in result for c in i]
+            return data
+
