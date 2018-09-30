@@ -337,6 +337,10 @@ class MysqlClient(object):
             cursor.execute('show databases')
             result = cursor.fetchall()
             data = [c for i in result for c in i]
+            a = ["information_schema","performance_schema","mysql"]
+            for i in a:
+                if i in data:
+                    data.remove(i)
             return data
 
     def index(self, table_name):
@@ -393,7 +397,22 @@ class MysqlClient(object):
             data = [c for i in result for c in i]
             return data
 
-    def user_priv(self,db_user,db_password,db_database,db_priv):
+    # def grant_priv(self,db_user,db_password,db_database,db_priv):
+    #     sql1 = "create user '"+db_user+"'@'%' "+"identified by '"+db_password+"';"
+    #     with self.con.cursor() as cursor:
+    #         if db_priv == '0':
+    #             sql2 = "grant select on "+db_database+".* to '"+db_user+"'@'%';"
+    #         elif  db_priv == '1':
+    #             sql2 = "grant select,update,insert,delete on "+db_database+".* to '"+db_user+"'@'%';"
+    #         else:
+    #             return false
+    #         cursor.execute(sql1)
+    #         cursor.execute(sql2)
+    #         result = cursor.fetchall()
+    #         data = [c for i in result for c in i]
+    #         return data
+
+    def grant_priv(self,db_user,db_password,db_database,db_priv,is_create_user=1):
         sql1 = "create user '"+db_user+"'@'%' "+"identified by '"+db_password+"';"
         with self.con.cursor() as cursor:
             if db_priv == '0':
@@ -402,8 +421,28 @@ class MysqlClient(object):
                 sql2 = "grant select,update,insert,delete on "+db_database+".* to '"+db_user+"'@'%';"
             else:
                 return false
-            cursor.execute(sql1)
+            if is_create_user == 1:
+                cursor.execute(sql1)
             cursor.execute(sql2)
+            result = cursor.fetchall()
+            data = [c for i in result for c in i]
+            return data
+
+    def revoke_priv(self,db_user,db_database,db_priv,is_drop_user=0):
+        sql1 = "drop user '"+db_user+"'@'%';"
+        sql2 = ''
+        with self.con.cursor() as cursor:
+            if is_drop_user == 1:
+                cursor.execute(sql1)
+            else:
+                if db_priv == '0':
+                    sql2 = "revoke select on "+db_database+".* from '"+db_user+"'@'%';"
+                elif  db_priv == '1':
+                    sql2 = "revoke select,update,insert,delete on "+db_database+".* from '"+db_user+"'@'%';"
+                else:
+                    return false
+                cursor.execute(sql2)
+            cursor.execute('flush privileges')
             result = cursor.fetchall()
             data = [c for i in result for c in i]
             return data

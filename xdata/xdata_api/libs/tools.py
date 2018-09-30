@@ -19,6 +19,19 @@ def list_to_json(data,*args):
         ret.append(item)
     return ret
 
+def list_only_to_json(data):
+    ret = []
+    n = 1
+    for i in data:
+        item = {}
+        item['id'] = n
+        item['name'] = i
+        item['status'] = "0"
+        n = n + 1
+        ret.append(item)
+    return ret
+
+
 def human_time(date=None):
     if date:
         assert isinstance(date, datetime)

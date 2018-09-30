@@ -28,11 +28,11 @@
                     <el-button v-if="has_permission('users_info_edit')" size="small" @click="handleEdit(scope.row)">
                         重置密码
                     </el-button>
-                    <el-button v-if="has_permission('users_info_add')" size="small" type="primary" @click="userAdd(scope.row)"
+                    <el-button v-if="has_permission('users_info_edit')" size="small" type="primary" @click="handleChange(scope.row)"
                                >修改权限
                     </el-button>
                     <el-button v-if="has_permission('users_info_del')" size="small" type="danger" @click="deleteCommit(scope.row)"
-                               :loading="btnDelLoading[scope.row.id]">删除
+                               :loading="btnDelLoading[scope.row.priv_id]">删除
                     </el-button>
                 </template>
             </el-table-column>
@@ -57,9 +57,22 @@
             </el-form>
             <div slot="footer">
                 <el-button @click="dialogVisible=false">取消</el-button>
-                <el-button type="primary" @click="saveCommit" :loading="btnSaveLoading">保存</el-button>
+                <el-button type="primary" @click="resetCommit" :loading="btnSaveLoading">保存</el-button>
             </div>
         </el-dialog>
+        <el-dialog :title="title" :visible.sync="dialogChaPriVisible" width="80%" append-to-body>
+            <el-form :model="privformedit" label-width="80px">
+                <el-form-item prop="db_priv" label="权限">
+                    <el-radio v-model="privformedit.db_priv" label="只读">只读</el-radio>
+                    <el-radio v-model="privformedit.db_priv" label="读写">读写</el-radio>
+                </el-form-item>
+            </el-form>
+            <div slot="footer">
+                <el-button @click="dialogChaPriVisible=false">取消</el-button>
+                <el-button type="primary" @click="privCommit" :loading="btnSaveLoading">保存</el-button>
+            </div>
+        </el-dialog>
+        <!-- <change-priv v-if="dialogChaPriVisible" :privrole="privformedit" @close="dialogChaPriVisible = false"></change-priv> -->
     </el-dialog>
 </template>
 
@@ -68,8 +81,12 @@
 </style>
 
 <script>
+    import ChangePriv from './ChangePriv.vue'
     export default {
         props: ['role'],
+        components: {
+            ChangePriv,
+        },
         data () {
             var validatePass2 = (rule, value, callback) => {
             if (value === '') {
@@ -109,8 +126,11 @@
                      ]
                 },
                 formedit: '',
+                privformedit: {},
                 is_disabled: false,
-                checkPass: ''
+                checkPass: '',
+                dialogChaPriVisible: false,
+                delformedit: ''
             }
         },
         methods: {
@@ -141,30 +161,53 @@
                 this.title = '重置密码';
             },
 
+             //修改权限
+            handleChange (row) {
+                this.privformedit = this.$deepCopy(row);
+                this.dialogChaPriVisible = true;
+                this.title = '修改权限';
+            },
+
             //提交修改
-            saveCommit () {
+            resetCommit () {
                 if (this.form.new_password === this.form.checkPass) {
                     this.btnSaveLoading = true;
-                let request;
-                /*if (this.form.id) {
-                    request = this.$http.put(`/api/users/user_info/${this.form.id}/reset_password`, this.form)
-                } else {
-                    request = this.$http.post(`/api/users/hosts/`, this.form)
-                }*/
-                request = this.$http.put(`/api/users/user_info/${this.formedit.account_id}/reset_password/`,this.form)
-                request.then(() => {
-                    this.dialogVisible = false;
-                    this.$layer_message('提交成功', 'success');
-                    /*this.fetch(this.currentPage);
-                    this.get_host_zone();
-                    this.get_host_type()*/
-                }, res => this.$layer_message(res.result)).finally(() => this.btnSaveLoading = false)
+                    let request;
+                    request = this.$http.put(`/api/users/user_info/${this.formedit.account_id}/reset_password/`,this.form)
+                    request.then(() => {
+                        this.dialogVisible = false;
+                        this.$layer_message('提交成功', 'success');
+                    }, res => this.$layer_message(res.result)).finally(() => this.btnSaveLoading = false)
                 }
-                
-            }
+            },
+
+            //修改权限
+            privCommit () {
+                this.btnSaveLoading = true;
+                let request;
+                request = this.$http.put(`/api/users/user_info/${this.privformedit.priv_id}/change_privileges/`,this.privformedit)
+                request.then(() => {
+                    this.dialogChaPriVisible = false;
+                    this.$layer_message('提交成功', 'success');
+                }, res => this.$layer_message(res.result)).finally(() => this.btnSaveLoading = false)
+                this.refresh()
+            },
+
+            // 删除权限
+            deleteCommit (row) {
+                // this.delformedit = this.$deepCopy(row);
+                this.$confirm('此操作将删除访问该数据库的权限，是否继续？', '删除确认', {type: 'warning'}).then(() => {
+                    this.btnDelLoading = {[row.priv_id]: true};
+                    this.$http.delete(`/api/users/user_info/${row.priv_id}`).then(() => {
+                        this.fetch(this.currentPage)
+                    }, res => this.$layer_message(res.result)).finally(() => this.btnDelLoading = {})
+                }).catch(() => {
+                })
+            }    
         },
         mounted() {
             this.fetch()
+            //this.get_db_fetch()
         }
 
     }

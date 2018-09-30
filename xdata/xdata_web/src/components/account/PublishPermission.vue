@@ -5,7 +5,9 @@
             <el-option label="发布应用权限" value="app"></el-option>
         </el-select>
         <el-transfer :titles="['可选发布环境', '已分配环境']" v-if="type === 'env'" v-model="env_result" :data="envs"></el-transfer>
-        <el-transfer :titles="['可选发布应用', '已分配应用']" v-if="type === 'app'" v-model="app_result" :data="apps"></el-transfer>
+        <el-transfer :titles="['可选发布应用', '已分配应用']" v-if="type === 'app'" v-model="app_result" :data="apps">
+            <el-button>权限</el-button>
+        </el-transfer>
         <div slot="footer" v-if="has_permission('config_app_rel_edit')">
             <el-button @click="visible = false">取消</el-button>
             <el-button type="primary" @click="saveCommit" :loading="btnSaveLoading">保存</el-button>
