@@ -62,6 +62,7 @@ def post():
         return json_response(host)
     return json_response(message=error)
 
+# 获取数据库列表
 @blueprint.route('/<int:user_id>/database/', methods=['GET'])
 @require_permission('users_info_valid | users_info_view')
 def get_db(user_id):
@@ -72,6 +73,19 @@ def get_db(user_id):
             return json_response(res)
     except Exception as e:
         return json_response(message='连接失败')
+
+# 获取用户列表
+@blueprint.route('/<int:user_id>/user/', methods=['GET'])
+@require_permission('users_info_valid | users_info_view')
+def get_user(user_id):
+    res = []
+    cli = UserInfo.query.filter_by(user_id=user_id).group_by(UserInfo.db_user)
+    if cli:
+        return json_response({'data': [x.to_json() for x in cli.all()]})
+        # for i in cli:
+        #     res.append(i.db_user)
+        # return json_response(res)
+    return json_response(message='数据库不存在')
 
 # 重置密码
 @blueprint.route('/<int:account_id>/reset_password/', methods=['PUT'])
@@ -140,6 +154,7 @@ def get_valid_db(user_id):
     except Exception as e:
         return json_response(message='连接失败')
 
+# 删除用户
 @blueprint.route('/<int:user_id>', methods=['DELETE'])
 @require_permission('users_info_del')
 def delete(user_id):
@@ -160,6 +175,24 @@ def delete(user_id):
             return json_response()
     except Exception as e:
         return json_response(message='连接失败')
+
+# 在已有用户的情况下新增权限
+@blueprint.route('/<int:account_id>/add_privileges/', methods=['PUT'])
+@require_permission('users_info_valid | users_info_edit')
+def addprivileges(account_id):
+    form, error = JsonParser('db_database','db_priv').parse()
+    account = UserInfo.query.get_or_404(account_id)
+    cli = User.query.get_or_404(account.user_id)
+    if error is None:
+        try:
+            with MysqlClient(ip=cli.db_host, user=cli.db_user, password=cli.db_password, port=cli.db_port) as f:
+                f.grant_priv(account.db_user,'111',form.db_database,form.db_priv,0)
+                userpriv = UserPriv(account_id=account_id,db_database=form.db_database,db_priv=form.db_priv)
+                userpriv.save()
+                return json_response()
+        except Exception as e:
+            return json_response(message='连接失败')
+    return json_response(message=error)
 
     
 

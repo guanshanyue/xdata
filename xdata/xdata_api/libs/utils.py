@@ -416,9 +416,9 @@ class MysqlClient(object):
         sql1 = "create user '"+db_user+"'@'%' "+"identified by '"+db_password+"';"
         with self.con.cursor() as cursor:
             if db_priv == '0':
-                sql2 = "grant select on "+db_database+".* to '"+db_user+"'@'%';"
+                sql2 = "grant select, lock tables, show view on "+db_database+".* to '"+db_user+"'@'%';"
             elif  db_priv == '1':
-                sql2 = "grant select,update,insert,delete on "+db_database+".* to '"+db_user+"'@'%';"
+                sql2 = "grant select, insert, update, delete, create, drop, index, alter, create temporary tables, lock tables, execute, create view, show view, create routine, alter routine, event, trigger on "+db_database+".* to '"+db_user+"'@'%';"
             else:
                 return false
             if is_create_user == 1:
@@ -436,9 +436,9 @@ class MysqlClient(object):
                 cursor.execute(sql1)
             else:
                 if db_priv == '0':
-                    sql2 = "revoke select on "+db_database+".* from '"+db_user+"'@'%';"
+                    sql2 = "revoke select, lock tables, show view on "+db_database+".* from '"+db_user+"'@'%';"
                 elif  db_priv == '1':
-                    sql2 = "revoke select,update,insert,delete on "+db_database+".* from '"+db_user+"'@'%';"
+                    sql2 = "revoke select, insert, update, delete, create, drop, index, alter, create temporary tables, lock tables, execute, create view, show view, create routine, alter routine, event, trigger on "+db_database+".* from '"+db_user+"'@'%';"
                 else:
                     return false
                 cursor.execute(sql2)

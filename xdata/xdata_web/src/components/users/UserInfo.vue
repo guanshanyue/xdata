@@ -15,7 +15,7 @@
             </el-col>
             <el-col :span="8"  style="text-align: right">
                 <el-button @click="refresh()">刷新</el-button>
-                <!-- <el-button v-if="has_permission('users_info_add')" type="primary" @click="handleAdd">添加账号</el-button> -->
+                <el-button v-if="has_permission('users_info_add')" type="primary" @click="handleAdd">新增权限</el-button>
             </el-col>
         </el-row>
         <el-table :data="hosts.data" v-loading="tableLoading" style="width: 100%; margin-top: 20px">
@@ -48,12 +48,12 @@
         <el-dialog :title="title" :visible.sync="dialogVisible" width="80%" append-to-body>
             <el-form :model="form"  :rules="rules" label-width="80px">
                 <el-form-item prop="db_password" label="密码">
-                <el-input type="password" v-model="form.new_password" auto-complete="off" :disabled="is_disabled">
+                    <el-input type="password" v-model="form.new_password" auto-complete="off" :disabled="is_disabled">
                 </el-input>
-            </el-form-item>
-            <el-form-item label="确认密码" prop="checkPass">
-                <el-input type="password" v-model="form.checkPass" autocomplete="off"></el-input>
-            </el-form-item>
+                </el-form-item>
+                <el-form-item label="确认密码" prop="checkPass">
+                    <el-input type="password" v-model="form.checkPass" autocomplete="off"></el-input>
+                </el-form-item>
             </el-form>
             <div slot="footer">
                 <el-button @click="dialogVisible=false">取消</el-button>
@@ -70,6 +70,30 @@
             <div slot="footer">
                 <el-button @click="dialogChaPriVisible=false">取消</el-button>
                 <el-button type="primary" @click="privCommit" :loading="btnSaveLoading">保存</el-button>
+            </div>
+        </el-dialog>
+        <el-dialog :title="title" :visible.sync="dialogAddVisible" width="80%" append-to-body>
+            <el-form :model="addformedit"  :rules="rules" label-width="80px">
+                <el-form-item prop="db_user" label="账号名称">
+                    <el-select v-model="addformedit.db_user" placeholder="请选择账号" @change='get_db_fetch' >
+                        <el-option v-for="item in user_items" :key="item.id" :label="item.db_user" :value="item.db_user">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item prop="db_database" label="数据库">
+                    <el-select v-model="addformedit.db_database" placeholder="请选择数据库" >
+                        <el-option v-for="item in db_items" :key="item.id" :label="item.name" :value="item.name" filterable>
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item prop="db_priv" label="权限">
+                    <el-radio v-model="addformedit.db_priv" label="0">只读</el-radio>
+                    <el-radio v-model="addformedit.db_priv" label="1">读写</el-radio>
+                </el-form-item>
+            </el-form>
+            <div slot="footer">
+                <el-button @click="dialogAddVisible=false">取消</el-button>
+                <el-button type="primary" @click="addPrivCommit" :loading="btnSaveLoading">保存</el-button>
             </div>
         </el-dialog>
         <!-- <change-priv v-if="dialogChaPriVisible" :privrole="privformedit" @close="dialogChaPriVisible = false"></change-priv> -->
@@ -130,10 +154,49 @@
                 is_disabled: false,
                 checkPass: '',
                 dialogChaPriVisible: false,
-                delformedit: ''
+                delformedit: '',
+                addformedit: {
+                    'db_user':'',
+                    'db_database':'',
+                    'db_priv': "0"
+                },
+                dialogAddVisible: false,
+                user_items: [],
+                db_items: [],
+                user_info_id: ''
             }
         },
         methods: {
+
+            // 获取用户列表
+            get_user_fetch() {
+                this.loading = true;
+                this.$http.get(`/api/users/user_info/${this.role.id}/user/`).then(res => {
+                    this.user_items = res.result.data
+                }, res => this.$layer_message(res.result)).finally(() => this.loading = false)
+            },
+
+            // 获取数据库列表
+            get_db_fetch(vId) {
+                this.loading = true;
+                // console.log(vId);
+                let obj = {};
+                obj = this.user_items.find((item)=>{
+                  return item.db_user === vId;
+                });
+                // console.log(obj.id);
+                this.user_info_id = obj.id;
+                this.$http.get(`/api/users/user_info/${this.user_info_id}/database/valid/`).then(res => {
+                    for (let item of res.result) {
+                        if (item.status === "0") {
+                            this.db_items.push({
+                            id: String(item.id),
+                            name: item.name
+                            })
+                        }    
+                    } 
+                }, res => this.$layer_message(res.result)).finally(() => this.loading = false)
+            },
 
             handleCurrentChange(val) {
                 this.currentPage = val;
@@ -154,6 +217,11 @@
                 this.fetch(this.currentPage);
             },
 
+            // 新增权限
+            handleAdd (row) {
+                this.dialogAddVisible = true;
+                this.title = '新增权限';
+            },
             //重置密码
             handleEdit (row) {
                 this.formedit = this.$deepCopy(row);
@@ -203,11 +271,24 @@
                     }, res => this.$layer_message(res.result)).finally(() => this.btnDelLoading = {})
                 }).catch(() => {
                 })
+            },
+
+            // 新增权限
+            addPrivCommit () {
+                this.btnSaveLoading = true;
+                let request;
+                request = this.$http.put(`/api/users/user_info/${this.user_info_id}/add_privileges/`,this.addformedit)
+                request.then(() => {
+                    this.dialogAddVisible = false;
+                    this.$layer_message('提交成功', 'success');
+                }, res => this.$layer_message(res.result)).finally(() => this.btnSaveLoading = false)
+                this.refresh()
             }    
         },
         mounted() {
             this.fetch()
-            //this.get_db_fetch()
+            this.get_user_fetch()
+            // this.get_db_fetch()
         }
 
     }
