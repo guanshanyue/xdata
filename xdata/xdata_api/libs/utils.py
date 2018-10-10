@@ -397,21 +397,6 @@ class MysqlClient(object):
             data = [c for i in result for c in i]
             return data
 
-    # def grant_priv(self,db_user,db_password,db_database,db_priv):
-    #     sql1 = "create user '"+db_user+"'@'%' "+"identified by '"+db_password+"';"
-    #     with self.con.cursor() as cursor:
-    #         if db_priv == '0':
-    #             sql2 = "grant select on "+db_database+".* to '"+db_user+"'@'%';"
-    #         elif  db_priv == '1':
-    #             sql2 = "grant select,update,insert,delete on "+db_database+".* to '"+db_user+"'@'%';"
-    #         else:
-    #             return false
-    #         cursor.execute(sql1)
-    #         cursor.execute(sql2)
-    #         result = cursor.fetchall()
-    #         data = [c for i in result for c in i]
-    #         return data
-
     def grant_priv(self,db_user,db_password,db_database,db_priv,is_create_user=1):
         sql1 = "create user '"+db_user+"'@'%' "+"identified by '"+db_password+"';"
         with self.con.cursor() as cursor:

@@ -44,14 +44,14 @@
             <el-table-column prop="zone" label="所属区域" width="160px"></el-table-column>
             <el-table-column prop="type" label="数据库类型" width="160px"></el-table-column>
             <el-table-column prop="db_host" label="数据库地址" width="160px"></el-table-column>
-            <el-table-column label="操作" width="400px" v-if="has_permission('users_host_edit|users_host_del|users_host_valid')">
+            <el-table-column label="操作" width="450px" v-if="has_permission('users_host_edit|users_host_del|users_host_valid')">
                 <template slot-scope="scope">
                     <el-button v-if="has_permission('users_host_edit')" size="small" @click="handleEdit(scope.row)">编辑</el-button>
                     <el-button v-if="has_permission('users_info_add')" size="small" type="primary" @click="userAdd(scope.row)"
-                               >新增用户
+                               >用户管理
                     </el-button>
                     <el-button v-if="has_permission('users_info_edit')" size="small" type="primary" @click="userEdit(scope.row)"
-                               >管理
+                               >权限管理
                     </el-button>
                     <el-button v-if="has_permission('users_host_valid')" size="small" type="success" @click="valid(scope.row)"
                                :loading="btnValidLoading[scope.row.id]">验证

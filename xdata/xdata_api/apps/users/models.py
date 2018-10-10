@@ -28,6 +28,9 @@ class UserInfo(db.Model, ModelMixin):
     db_password = db.Column(db.String(128))
     desc = db.Column(db.String(255))
 
+    __table_args__ = (
+        db.Index('idx_user_id', 'user_id'),
+    )
 
     def __repr__(self):
         return '<UserInfo %r>' % self.name
@@ -40,7 +43,9 @@ class UserPriv(db.Model, ModelMixin):
     db_database = db.Column(db.String(128))
     db_priv = db.Column(db.String(128))
 
-
+    __table_args__ = (
+        db.UniqueConstraint('account_id', 'db_database', name='uniq_account_id_db_database'),
+    )
 
     def __repr__(self):
         return '<UserInfo %r>' % self.name

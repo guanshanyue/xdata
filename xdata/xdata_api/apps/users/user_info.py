@@ -74,6 +74,46 @@ def get_db(user_id):
     except Exception as e:
         return json_response(message='连接失败')
 
+# 删除数据库
+@blueprint.route('/<int:user_id>/<db_database>/database/', methods=['DELETE'])
+@require_permission('users_info_valid | users_info_view | users_info_edit')
+def delete_db(user_id,db_database):
+    # form, error = JsonParser('db_database').parse()
+    cli = User.query.get_or_404(user_id)
+    db_data = UserPriv.query.filter_by(db_database=db_database).count()
+    if db_data > 0:
+        return json_response(message='数据库关联的有账号，请先解绑用户，再删除')
+    # if error is None:
+    try:
+        with MysqlClient(ip=cli.db_host, user=cli.db_user, password=cli.db_password, port=cli.db_port) as f:
+            res = f.basename()
+            if db_database in res:
+                sql = 'drop database '+db_database
+                f.execute(sql)
+                return json_response()
+            return json_response(message='数据库不存在')
+    except Exception as e:
+        return json_response(message='连接失败')
+    # return json_response(message=error)
+# def delete_db(user_id):
+#     form, error = JsonParser('db_database').parse()
+#     cli = User.query.get_or_404(user_id)
+#     db_data = UserPriv.query.filter_by(db_database=form.db_database).count()
+#     if db_data > 0:
+#         return json_response(message='数据库关联的有账号，请先解绑用户，再删除')
+#     if error is None:
+#         try:
+#             with MysqlClient(ip=cli.db_host, user=cli.db_user, password=cli.db_password, port=cli.db_port) as f:
+#                 res = f.basename()
+#                 if form.db_database in res:
+#                     sql = 'drop database '+form.db_database
+#                     f.execute(sql)
+#                     return json_response()
+#                 return json_response(message='数据库不存在')
+#         except Exception as e:
+#             return json_response(message='连接失败')
+#     return json_response(message=error)
+
 # 获取用户列表
 @blueprint.route('/<int:user_id>/user/', methods=['GET'])
 @require_permission('users_info_valid | users_info_view')
@@ -177,6 +217,23 @@ def delete(user_id):
         return json_response(message='连接失败')
 
 # 在已有用户的情况下新增权限
+# @blueprint.route('/<int:account_id>/add_privileges/', methods=['PUT'])
+# @require_permission('users_info_valid | users_info_edit')
+# def addprivileges(account_id):
+#     form, error = JsonParser('db_database','db_priv').parse()
+#     account = UserInfo.query.get_or_404(account_id)
+#     cli = User.query.get_or_404(account.user_id)
+#     if error is None:
+#         try:
+#             with MysqlClient(ip=cli.db_host, user=cli.db_user, password=cli.db_password, port=cli.db_port) as f:
+#                 f.grant_priv(account.db_user,'111',form.db_database,form.db_priv,0)
+#                 userpriv = UserPriv(account_id=account_id,db_database=form.db_database,db_priv=form.db_priv)
+#                 userpriv.save()
+#                 return json_response()
+#         except Exception as e:
+#             return json_response(message='连接失败')
+#     return json_response(message=error)
+
 @blueprint.route('/<int:account_id>/add_privileges/', methods=['PUT'])
 @require_permission('users_info_valid | users_info_edit')
 def addprivileges(account_id):
@@ -186,7 +243,34 @@ def addprivileges(account_id):
     if error is None:
         try:
             with MysqlClient(ip=cli.db_host, user=cli.db_user, password=cli.db_password, port=cli.db_port) as f:
-                f.grant_priv(account.db_user,'111',form.db_database,form.db_priv,0)
+                res = f.basename()
+                sql = 'create database '+form.db_database
+                if form.db_database not in res:
+                    f.execute(sql)
+                f.grant_priv(account.db_user,'',form.db_database,form.db_priv,0)
+                userpriv = UserPriv(account_id=account_id,db_database=form.db_database,db_priv=form.db_priv)
+                userpriv.save()
+                return json_response()
+        except Exception as e:
+            return json_response(message='连接失败')
+    return json_response(message=error)
+
+# # 在已有用户的情况下新增数据库
+@blueprint.route('/<int:account_id>/add_database/', methods=['PUT'])
+@require_permission('users_info_valid | users_info_edit')
+def adddatabase(account_id):
+    form, error = JsonParser('db_database','db_priv').parse()
+    account = UserInfo.query.get_or_404(account_id)
+    cli = User.query.get_or_404(account.user_id)
+    if error is None:
+        try:
+            with MysqlClient(ip=cli.db_host, user=cli.db_user, password=cli.db_password, port=cli.db_port) as f:
+                res = f.basename()
+                sql = 'create database '+form.db_database
+                if form.db_database in res:
+                    return json_response(message='数据库已存在不能重复创建')
+                f.execute(sql)
+                f.grant_priv(account.db_user,'',form.db_database,form.db_priv,0)
                 userpriv = UserPriv(account_id=account_id,db_database=form.db_database,db_priv=form.db_priv)
                 userpriv.save()
                 return json_response()
