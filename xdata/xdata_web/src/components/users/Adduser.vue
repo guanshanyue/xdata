@@ -72,10 +72,6 @@
                 </div> 
             </el-tab-pane>
         </el-tabs>
-        <!-- <div slot="footer">
-            <el-button type="text" @click="visible = false">取消</el-button>
-            <el-button type="primary" :loading="btnSaveLoading" @click="saveCommit">保存</el-button>
-        </div> -->
     </el-dialog>
 </template>
 
@@ -207,10 +203,7 @@
             // 删除数据库
             dbDelcommit (row) {
                 this.btnSaveLoading = true;
-                // this.delformedit = this.$deepCopy(row);
                 this.$confirm('此操作将删除该数据库，是否继续？', '删除确认', {type: 'warning'}).then(() => {
-                    // this.btnDelLoading = {[row]: true};
-                    // this.$http.delete(`/api/users/user_info/${row}/database/`,this.delDbForm).then(() => {
                     this.$http.delete(`/api/users/user_info/${row}/${this.delDbForm.db_database}/database/`).then(() => {
                         this.get_db_fetch();
                         this.visible = false;

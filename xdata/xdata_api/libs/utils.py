@@ -10,7 +10,7 @@ import datetime
 import base64
 import uuid
 import pymysql
-
+from pymongo import MongoClient
 
 class DockerClient(object):
     def __init__(self, base_url):
@@ -441,3 +441,53 @@ class MysqlClient(object):
             data = [c for i in result for c in i]
             return data
 
+class MongoConn(object):
+    def __init__(self, ip=None, user=None, password=None, port=None, db=None):
+        self.ip = ip
+        self.user = user
+        self.password = password
+        self.db = db
+        self.port = int(port)
+        self.con = MongoClient(
+        host=self.ip,
+        port=self.port,
+        username=self.user,
+        password=self.password,
+        authSource=self.db,
+        authMechanism='SCRAM-SHA-1')
+    
+    @staticmethod
+    def addDic(theIndex, word, value):
+        theIndex.setdefault(word, []).append(value)
+
+    def get_db(self):
+        conn = MongoClient(
+        host=self.ip,
+        port=self.port,
+        username=self.user,
+        password=self.password,
+        authSource=self.db,
+        authMechanism='SCRAM-SHA-1')
+        return conn
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.con.close()
+        return self.con
+
+    def list_collections(self, database=None):
+        with self.con as cursor:
+            coll = cursor[database]
+            result = coll.list_collection_names(session=None)
+            return result
+
+    def drop(self, database=None, collections=None):
+        with self.con as cursor:
+            coll = cursor[database]
+            result = coll[collections].drop()
+            return result
+
+    def create_index(self, database=None, collections=None, index=None):
+        with self.con as cursor:
+            coll = cursor[database]
+            result = coll[collections].create_index(index)
+            return result

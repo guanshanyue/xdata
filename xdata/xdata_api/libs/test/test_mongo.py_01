@@ -1,0 +1,26 @@
+from pymongo import MongoClient
+class MongoConn(object):
+    def __init__(self, ip=None, user=None, password=None, port=None, db=None):
+        self.ip = ip
+        self.user = user
+        self.password = password
+        self.db = db
+        self.port = int(port)
+        self.con = object
+    def get_db(self):
+        self.con = MongoClient(
+          host=self.ip,
+          port=self.port,
+          username=self.user,
+          password=self.password,
+          authSource=self.db,
+          authMechanism='SCRAM-SHA-1')
+        return self.con
+if __name__ == '__main__':
+    db = MongoConn('192.168.1.91','root','123456',27017,'admin')
+    client = db.get_db()
+    TempleSpider = client['ows_anquandl']
+    temple_comment_collect_03 = TempleSpider['token_records']
+    temple_comment_collect_03.create_index('token')
+    temple_comment_collect_03.create_index('identityUid')
+    temple_comment_collect_03.create_index('createdDate')

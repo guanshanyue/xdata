@@ -31,7 +31,7 @@
                         <el-form-item label="数据库名称"><span>{{ props.row.extend.name }}</span></el-form-item>
                         <el-form-item label="数据库地址"><span>{{ props.row.extend.db_host }}</span></el-form-item>
                         <el-form-item label="数据库账号"><span>{{ props.row.extend.db_user }}</span></el-form-item>
-                        <el-form-item label="数据库端口"><span>{{ props.row.extend.db_user }}</span></el-form-item>
+                        <el-form-item label="数据库端口"><span>{{ props.row.extend.db_port }}</span></el-form-item>
                         <el-form-item label="备注信息"><span>{{ props.row.desc }}</span></el-form-item>
                     </el-form>
                     <el-row v-else style="text-align: center">
@@ -128,7 +128,6 @@
         </el-dialog>
     </div>
 </template>
-
 
 <style>
     .demo-table-expand {

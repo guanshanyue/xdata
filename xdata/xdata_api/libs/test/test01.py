@@ -221,3 +221,17 @@ for i in dd:
 print(dd)
 
 
+
+
+def __enter__(self):
+    self.con = MongoClient(
+        host=self.ip,
+        port=self.port,
+        username=self.user,
+        password=self.password,
+        authSource=self.db,
+        authMechanism='SCRAM-SHA-1')
+    return self
+
+def __exit__(self, exc_type, exc_val, exc_tb):
+    self.con.close()
