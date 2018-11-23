@@ -486,6 +486,7 @@ class MongoConn(object):
             result = coll[collections].drop()
             return result
 
+    #创建索引
     def create_index(self, database=None, collections=None, index=None):
         with self.con as cursor:
             coll = cursor[database]
