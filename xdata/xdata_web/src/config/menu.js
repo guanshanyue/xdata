@@ -16,7 +16,8 @@ let menu = {
         }, 
         {
             key: '3', desc: '数据库管理', icon: 'fa fa-server', permission: 'users_host_view', subs: [
-                {key: '/users/user', permission: 'users_host_view', desc: '数据库列表'}
+                {key: '/users/user', permission: 'users_host_view', desc: '数据库列表'},
+                {key: '/users/mongodb', permission: 'users_host_view', desc: 'mongodb管理'}
             ]
         },
         {

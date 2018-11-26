@@ -49,3 +49,20 @@ class UserPriv(db.Model, ModelMixin):
 
     def __repr__(self):
         return '<UserInfo %r>' % self.name
+
+class Mongodb(db.Model, ModelMixin):
+    __tablename__ = 'mongodb_hosts'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+    desc = db.Column(db.String(255))
+    type = db.Column(db.String(50))
+    zone = db.Column(db.String(50))
+    db_host = db.Column(db.String(255))
+    db_user = db.Column(db.String(128))
+    db_password = db.Column(db.String(128))
+    db_port = db.Column(db.Integer)
+    db_database = db.Column(db.String(128))
+
+    def __repr__(self):
+        return '<Mongodb %r>' % self.name

@@ -56,7 +56,7 @@
                 <tag-td :item="codes['assets_host_exec_tpl_del']"></tag-td>
             </tr>
             <tr>
-                <td rowspan="4">数据库管理</td>
+                <td rowspan="6">数据库管理</td>
                 <td rowspan="2">数据库列表</td>
                 <tag-td :item="codes['users_host_view']"></tag-td>
                 <tag-td :item="codes['users_host_add']"></tag-td>
@@ -65,6 +65,17 @@
              <tr>
                 <tag-td :item="codes['users_host_del']"></tag-td>
                 <tag-td :item="codes['users_host_valid']"></tag-td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="2">mongodb数据库列表</td>
+                <tag-td :item="codes['users_mongodb_view']"></tag-td>
+                <tag-td :item="codes['users_mongodb_add']"></tag-td>
+                <tag-td :item="codes['users_mongodb_edit']"></tag-td>
+            </tr>
+             <tr>
+                <tag-td :item="codes['users_mongodb_del']"></tag-td>
+                <tag-td :item="codes['users_mongodb_valid']"></tag-td>
                 <td></td>
             </tr>
             <tr>

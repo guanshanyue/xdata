@@ -127,3 +127,10 @@ INSERT INTO account_permissions (id, name, `desc`) VALUES (1402, 'users_info_add
 INSERT INTO account_permissions (id, name, `desc`) VALUES (1403, 'users_info_edit', '编辑数据库');
 INSERT INTO account_permissions (id, name, `desc`) VALUES (1404, 'users_info_del', '删除数据');
 INSERT INTO account_permissions (id, name, `desc`) VALUES (1405, 'users_info_valid', '验证数据库');
+
+-- 管理 -> mongodb数据库列表
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1501, 'users_mongodb_view', '获取mongodb数据库列表');
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1502, 'users_mongodb_add', '添加mongodb数据库');
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1503, 'users_mongodb_edit', '编辑mongodb数据库');
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1504, 'users_mongodb_del', '删除mongodb数据数据');
+INSERT INTO account_permissions (id, name, `desc`) VALUES (1505, 'users_mongodb_valid', '验证mongodb数据库');

@@ -441,7 +441,7 @@ class MysqlClient(object):
             data = [c for i in result for c in i]
             return data
 
-class MongoConn(object):
+class MongoDBClient(object):
     def __init__(self, ip=None, user=None, password=None, port=None, db=None):
         self.ip = ip
         self.user = user
@@ -469,6 +469,16 @@ class MongoConn(object):
         authSource=self.db,
         authMechanism='SCRAM-SHA-1')
         return conn
+    
+    def __enter__(self):
+        self.con = MongoClient.connect(
+        host=self.ip,
+        port=self.port,
+        username=self.user,
+        password=self.password,
+        authSource=self.db,
+        authMechanism='SCRAM-SHA-1')
+        return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.con.close()

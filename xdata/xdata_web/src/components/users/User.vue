@@ -196,7 +196,11 @@
                 this.currentPage = 1;
                 this.fetch();
             },
-
+            //类型查询
+            type_Search(){
+                this.currentPage = 1;
+                this.fetch();
+            },
             //刷新
             refresh(){
                 this.fetch(this.currentPage);
@@ -211,6 +215,7 @@
             //管理用户
             userEdit(row) {
                 this.formuserinfo = this.$deepCopy(row);
+
                 this.dialogUserInfoVisible = true;
             },
 
